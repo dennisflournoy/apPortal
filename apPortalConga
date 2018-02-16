@@ -1,0 +1,38 @@
+SELECT
+  Amount__c,
+  Amount_Paid__c,
+  Bill_Date__c,
+  Discount_Amount__c,
+  Invoice_Number__c,
+  Memo__c
+FROM
+  Accounts_Payable__c
+WHERE
+
+
+SELECT
+  Amount_Paid__c,
+  Name,
+  Payment_Scheduled_Date__c,
+  Vendor__r.Name
+FROM
+  AP_Payment__c
+WHERE
+  Payment_Status__c = 'Scheduled to be Paid'
+
+
+SELECT
+  Accounts_Payable__r.Amount__c,
+  Accounts_Payable__r.Amount_Paid__c,
+  Accounts_Payable__r.Bill_Date__c,
+  Accounts_Payable__r.Discount_Amount__c,
+  Accounts_Payable__r.Invoice_Number__c,
+  Accounts_Payable__r.Memo__c
+  Amount_Paid__c,
+  Name,
+  Payment_Scheduled_Date__c,
+  Vendor__r.Name
+FROM
+  AP_Payment__c
+WHERE
+  Payment_Status__c = 'Scheduled to be Paid'
